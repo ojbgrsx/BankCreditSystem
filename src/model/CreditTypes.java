@@ -24,6 +24,7 @@ public class CreditTypes {
     private String name;
     private String description;
     private int interestRate;
+    private int interestRatePerMonth;
 
     public static List<CreditTypes> getCreditTypes(){
             try {
@@ -40,6 +41,7 @@ public class CreditTypes {
                     creditType.setName(rs.getString(2));
                     creditType.setDescription(rs.getString(3));
                     creditType.setInterestRate(rs.getInt(4));
+                    creditType.setInterestRatePerMonth(rs.getInt(5));
                     creditTypes.add(creditType);
                 }
             } catch (SQLException e) {

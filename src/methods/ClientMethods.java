@@ -13,7 +13,7 @@ public class ClientMethods {
     public static void firstOption(){
         List<CreditTypes> creditTypesList = CreditTypes.getCreditTypes();
         System.out.println();
-        System.out.println(StringUtils.center("CREDIT TYPES",140));
+        System.out.println(StringUtils.center("CREDIT TYPES",170));
         for (int i=0;i<3;i++){
             System.out.println(i+1+") "+creditTypesList.get(i).getDescription());
             System.out.println();
@@ -21,19 +21,17 @@ public class ClientMethods {
     }
     public static void secondOption(){
         System.out.println();
-        System.out.println(StringUtils.center("RATES",40));
         List<CreditTypes> creditTypesList = CreditTypes.getCreditTypes();
-        PrettyTable pt = new PrettyTable("#","CREDIT NAME","INTEREST RATE");
+        PrettyTable pt = new PrettyTable("#","CREDIT NAME","INTEREST RATE","RATE PER MONTH");
         for(int i=0;i<3;i++){
             CreditTypes creditType = creditTypesList.get(i);
-            pt.addRow(String.valueOf(i+1),creditType.getName(),creditType.getInterestRate()+"%");
+            pt.addRow(String.valueOf(i+1),creditType.getName(),creditType.getInterestRate()+"%",creditType.getInterestRatePerMonth()+"%");
         }
         System.out.println(pt);
     }
     public static void thirdOption(){
         System.out.println();
-        System.out.println(StringUtils.center("Conditions for issuing a loan".toUpperCase(),130));
-        PrettyTable pt = new PrettyTable("#","Condition".toUpperCase());
+        PrettyTable pt = new PrettyTable("#","Conditions for issuing a loan".toUpperCase());
         pt.addRow("*","A loan can be taken by a citizen of the country who has reached the age of 18 and has a passport at the time of application;");
         pt.addRow("*","Applicant must have property for collateral;");
         pt.addRow("*","The applicant must have a permanent job or other sources of income.");

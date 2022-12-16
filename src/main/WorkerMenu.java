@@ -22,13 +22,9 @@ public class WorkerMenu {
 
     public static void run(Worker worker) {
         Client clients = new Client();
-        final List<Client> clientsList = clients.getClients();
+        final List<Client> clientsList = Client.getClients();
         ChangeService changing = new ChangeService(worker);
         Scanner scan = new Scanner(System.in);
-        PrettyTable pt = new PrettyTable("ID", "First Name", "Second Name");
-        pt.addRow(String.valueOf(worker.getId()), worker.getFirstName(), worker.getLastName());
-        System.out.println(pt);
-
         System.out.println("HELLO DEAR ".toUpperCase() + worker.getFirstName().toUpperCase() + " " + worker.getLastName().toUpperCase() + "\n");
 
         while (true) {

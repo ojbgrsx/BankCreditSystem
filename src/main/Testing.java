@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class Testing {
     public static void main(String[] args) {
@@ -35,37 +36,43 @@ public class Testing {
 //        ClientMenu.run(Client.getClients().get(0));
 //        WorkerMenu.run(Worker.getWorkers().get(0));
 
-            ClientMethods.firstOption();
+//            ClientMenu.run(Client.getClients().get(0));
 
-        WorkerMethods.secondOption(Form.getForms(), Client.getClients());
+//        WorkerMethods.secondOption(Form.getForms(), Client.getClients());
+        Form form = Form.getForms().get(0);
+        Date currentDate = form.getInitialDate();
+        Date requestDate = form.getRequestedPeriod();
+//        long diff = TimeUnit.
+//        System.out.println(requestDate.getTime()-currentDate.getTime());
 
-        long now = System.currentTimeMillis();
-        Date date = new Date(now);
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        c.add(Calendar.YEAR,2);
-        c.add(Calendar.MONTH,-5);
+//        long now = System.currentTimeMillis();
+//        Date date = new Date(now);
 
-        java.util.Date date1 = c.getTime();
-        Date date2 = new Date(date1.getTime());
+//        Calendar c = Calendar.getInstance();
+//        c.setTime(date);
+//        c.add(Calendar.YEAR,2);
+//        c.add(Calendar.MONTH,-5);
 //
-//        System.out.println(date);
-//        System.out.println(date2);
-        Form form = new Form();
-        form.setClietId(1);
-        form.setBirthDate(date);
-        form.setPassportNumber("id1234567".toUpperCase());
-        form.setCitizenship(StringUtils.capitalize("kyrgyz"));
-        form.setResidentalAddress("Baytik Baatyra 1/103");
-        form.setPhoneNumber("996776511560");
-        form.setFamilyStatus(StringUtils.capitalize("alone"));
-        form.setWorkPlace("Google");
-        form.setMonthlySalary(150000);
-        form.setLoanType(1);
-        form.setReceiveCash(1000000);
-        form.setRequestedPeriod(date2);
-        form.setPersonalProperty("House,Car");
-        form.setCurrentLoans(false);
+//        java.util.Date date1 = c.getTime();
+//        Date date2 = new Date(date1.getTime());
+////
+////        System.out.println(date);
+////        System.out.println(date2);
+//        Form form = new Form();
+//        form.setClietId(1);
+//        form.setBirthDate(date);
+//        form.setPassportNumber("id1234567".toUpperCase());
+//        form.setCitizenship(StringUtils.capitalize("kyrgyz"));
+//        form.setResidentalAddress("Baytik Baatyra 1/103");
+//        form.setPhoneNumber("996776511560");
+//        form.setFamilyStatus(StringUtils.capitalize("alone"));
+//        form.setWorkPlace("Google");
+//        form.setMonthlySalary(150000);
+//        form.setLoanType(1);
+//        form.setReceiveCash(1000000);
+//        form.setRequestedPeriod(date2);
+//        form.setPersonalProperty("House,Car");
+//        form.setCurrentLoans(false);
 //        Form.insertForm(form);
 //        System.out.println(Form.getForms());
     }
