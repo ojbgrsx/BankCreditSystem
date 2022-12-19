@@ -1,20 +1,10 @@
 package main;
 
 import methods.ClientMethods;
-import methods.WorkerMethods;
 import model.Client;
-import model.Form;
-import model.Worker;
-import org.apache.commons.lang3.StringUtils;
 
-import java.math.RoundingMode;
 import java.sql.Date;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.SimpleDateFormat;
-import java.time.Period;
-import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 public class Testing {
     public static void main(String[] args) {
@@ -38,7 +28,7 @@ public class Testing {
 //        Client client1 = (Client) obj[0];
 //        System.out.println(client1.getClass().getSimpleName());
 
-        ClientMenu.run(Client.getClients().get(0));
+//        ClientMenu.run(Client.getClients().get(0));
 //        WorkerMenu.run(Worker.getWorkers().get(0));
 
 //            ClientMenu.run(Client.getClients().get(0));
@@ -63,7 +53,14 @@ public class Testing {
 //
 //        java.util.Date date1 = c.getTime();
 //        Date date2 = new Date(date1.getTime());
-////
+        Scanner scan = new Scanner(System.in);
+//        String day = scan.nextLine();
+//        String month = scan.nextLine();
+//        String year = scan.nextLine();
+//        String date = year + "-" + month + "-" + day;
+//        System.out.println(Date.valueOf(date));
+        ClientMethods.fourthOption(Client.getClients().get(1));
+        System.out.println(scan.nextBoolean());
 ////        System.out.println(date);
 ////        System.out.println(date2);
 //        Form form = new Form();

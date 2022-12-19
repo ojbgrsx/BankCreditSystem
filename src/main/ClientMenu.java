@@ -4,13 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import methods.ClientMethods;
 import model.Client;
-import model.Credit;
-import model.Form;
-import model.Worker;
-import services.*;
+import services.ChangeService;
+import services.ConnectionDBService;
 
 import java.sql.Connection;
-import java.util.List;
 import java.util.Scanner;
 
 @Getter
@@ -23,7 +20,6 @@ public class ClientMenu {
         ChangeService changing = new ChangeService(client);
 
         System.out.println("HELLO DEAR " + client.getFirstName().toUpperCase() + " " + client.getLastName().toUpperCase() + "\n");
-//        System.out.println(credit);
         while (true) {
             System.out.print("""
                     1. Types of loans issued by the bank
@@ -35,18 +31,16 @@ public class ClientMenu {
                     7. Exit
                     Choose the options (1-7):""");
             char menuOption = scan.next().charAt(0);
-            if (menuOption == '1'){
+            if (menuOption == '1') {
                 ClientMethods.firstOption();
-            }else if(menuOption == '2'){
+            } else if (menuOption == '2') {
                 ClientMethods.secondOption();
-            } else if(menuOption == '3') {
+            } else if (menuOption == '3') {
                 ClientMethods.thirdOption();
-            }
-            else if(menuOption == '4'){
-
-            }
-            else if (menuOption == '5') {
-                ClientMethods.fifthOption(changing,client);
+            } else if (menuOption == '4') {
+                ClientMethods.fourthOption(client);
+            } else if (menuOption == '5') {
+                ClientMethods.fifthOption(changing, client);
             } else if (menuOption == '6') {
                 Main.run();
             } else if (menuOption == '7') {
