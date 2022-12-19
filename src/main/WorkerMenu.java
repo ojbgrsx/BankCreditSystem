@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import methods.WorkerMethods;
 import model.Client;
+import model.Credit;
 import model.Form;
 import model.Worker;
 import services.ChangeService;
@@ -25,11 +26,11 @@ public class WorkerMenu {
         final List<Client> clientsList = Client.getClients();
         ChangeService changing = new ChangeService(worker);
         Scanner scan = new Scanner(System.in);
-        System.out.println("HELLO DEAR ".toUpperCase() + worker.getFirstName().toUpperCase() + " " + worker.getLastName().toUpperCase() + "\n");
+        System.out.println("HELLO DEAR ".toUpperCase() + worker.getFirstName().toUpperCase() + " " + worker.getLastName().toUpperCase());
 
         while (true) {
             System.out.print("""
-                    1. Show clients
+                    \n1. Show clients
                     2. Viewing and searching applications
                     3. View the list of borrowers
                     4. View the list of repaid loans
@@ -43,9 +44,9 @@ public class WorkerMenu {
             } else if (menuOption == '2') {
                 WorkerMethods.secondOption(Form.getForms(),clientsList);
             } else if (menuOption == '3') {
-                
+                WorkerMethods.thirdOption(Credit.getCredits(),clientsList);
             } else if (menuOption == '4') {
-                
+                WorkerMethods.fourthOption(Credit.getCredits(),clientsList);
             } else if (menuOption == '5') {
                 WorkerMethods.fifthOption(changing);
             } else if (menuOption == '6') {

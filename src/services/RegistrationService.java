@@ -32,11 +32,11 @@ public class RegistrationService {
         String username = scan.nextLine().toLowerCase();
         System.out.print("Enter password >>> ");
         String password = scan.nextLine();
-        double cash = 0.0;
+        int cash = 0;
         String clientInsertion = null, workerInsertion = null, values;
         if (accountType == 'c') {
             System.out.print("Enter your cash: ");
-            cash = scan.nextDouble();
+            cash = scan.nextInt();
             clientInsertion = String.format("INSERT INTO %s (clientFName,clientLName,clientUsername,clientPassword,clientCash)", "client");
         } else {
             workerInsertion = String.format("INSERT INTO %s (workerFName,workerLName,workerUsername,workerPassword)", "worker");
@@ -59,7 +59,7 @@ public class RegistrationService {
                 ps.setString(3, username);
                 ps.setString(4, password);
                 if (accountType == 'c'){
-                    ps.setDouble(5,cash);
+                    ps.setInt(5,cash);
                 }
                 ps.executeUpdate();
             }

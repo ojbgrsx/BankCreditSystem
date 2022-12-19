@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import methods.ClientMethods;
 import model.Client;
+import model.Credit;
+import model.Form;
 import model.Worker;
 import services.*;
 
@@ -19,10 +21,9 @@ public class ClientMenu {
     public static void run(Client client) {
         Scanner scan = new Scanner(System.in);
         ChangeService changing = new ChangeService(client);
-//        PrettyTable table = new PrettyTable("Client ID", "Credit ID", "First Name", "Last Name", "Credit Date");
 
         System.out.println("HELLO DEAR " + client.getFirstName().toUpperCase() + " " + client.getLastName().toUpperCase() + "\n");
-
+//        System.out.println(credit);
         while (true) {
             System.out.print("""
                     1. Types of loans issued by the bank

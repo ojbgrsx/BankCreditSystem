@@ -41,7 +41,6 @@ public class CreditTypes {
                     creditType.setName(rs.getString(2));
                     creditType.setDescription(rs.getString(3));
                     creditType.setInterestRate(rs.getInt(4));
-                    creditType.setInterestRatePerMonth(rs.getInt(5));
                     creditTypes.add(creditType);
                 }
             } catch (SQLException e) {

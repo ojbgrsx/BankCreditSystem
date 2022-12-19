@@ -1,7 +1,5 @@
 package main;
 
-import main.ClientMenu;
-import main.WorkerMenu;
 import model.Client;
 import model.Worker;
 import services.Authorization;
@@ -23,19 +21,18 @@ public class Main {
         System.out.println();
         if (accountType.equals("1")) {
             Client client = Authorization.signInClient();
-            if(client != null){
+            if (client != null) {
                 ClientMenu.run(client);
-            }else {
+            } else {
                 System.out.println("\nIncorrect username or password, try again\n");
                 run();
             }
 
         } else if (accountType.equals("2")) {
             Worker worker = Authorization.signInWorker();
-            if(worker != null){
+            if (worker != null) {
                 WorkerMenu.run(worker);
-            }
-            else {
+            } else {
                 System.out.println("\nIncorrect username or password, try again\n");
                 run();
             }

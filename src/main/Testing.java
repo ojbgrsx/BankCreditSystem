@@ -4,10 +4,15 @@ import methods.ClientMethods;
 import methods.WorkerMethods;
 import model.Client;
 import model.Form;
+import model.Worker;
 import org.apache.commons.lang3.StringUtils;
 
+import java.math.RoundingMode;
 import java.sql.Date;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
@@ -33,18 +38,21 @@ public class Testing {
 //        Client client1 = (Client) obj[0];
 //        System.out.println(client1.getClass().getSimpleName());
 
-//        ClientMenu.run(Client.getClients().get(0));
+        ClientMenu.run(Client.getClients().get(0));
 //        WorkerMenu.run(Worker.getWorkers().get(0));
 
 //            ClientMenu.run(Client.getClients().get(0));
 
 //        WorkerMethods.secondOption(Form.getForms(), Client.getClients());
-        Form form = Form.getForms().get(0);
-        Date currentDate = form.getInitialDate();
-        Date requestDate = form.getRequestedPeriod();
-//        long diff = TimeUnit.
-//        System.out.println(requestDate.getTime()-currentDate.getTime());
-
+//        Form form = Form.getForms().get(0);
+//        Date currentDate = form.getInitialDate();
+//        Date requestDate = form.getRequestedPeriod();
+//        TimeUnit tu = TimeUnit.DAYS;
+//        long time = requestDate.getTime()-currentDate.getTime();
+//        int month = (int) (tu.convert(time,TimeUnit.MILLISECONDS)/30);
+//        System.out.println(tu.convert(time,TimeUnit.MILLISECONDS)/30);
+//        System.out.println(WorkerMethods.calculatingMonthCash(form));
+// 66315.7895
 //        long now = System.currentTimeMillis();
 //        Date date = new Date(now);
 
